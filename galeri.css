@@ -97,6 +97,37 @@ body {
     color: var(--color-gray);
 }
 
+/* Pagination */
+.pagination {
+    width: 30%;
+    background-color: #4481eb;
+    border-radius: var(--card-border-radius);
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.pagination a {
+    color: white
+}
+
+.pagination-items a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: 800;
+    align-items: center;
+    justify-content: center;
+}
+
+.pagination-items a.active {
+    background: black
+}
+
+.pagination-items a:hover {
+    background: white;
+    color: black;
+}
 
 /*==================NAVBAR================*/
 
