@@ -37,6 +37,7 @@ if (isset($_POST["cari"])) {
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!--------STYLE CSS-->
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -209,7 +210,7 @@ if (isset($_POST["cari"])) {
                             <img src="./img/facebook.jpg" alt="">
                         </div>
                         <div class="message-body">
-                            <a href="https://www.facebook.com/bpsstatistics">
+                            <a href="https://www.facebook.com/bpsstatistics" target="blank">
                                 <h5> Facebook</h5>
                             </a>
                         </div>
@@ -220,7 +221,7 @@ if (isset($_POST["cari"])) {
                             <div class="active"></div>
                         </div>
                         <div class="message-body">
-                            <a href="https://www.instagram.com/bps_statistics/?hl=id">
+                            <a href="https://www.instagram.com/bps_statistics/?hl=id" target="blank">
                                 <h5>Instagram</h5>
                             </a>
                         </div>
@@ -238,10 +239,6 @@ if (isset($_POST["cari"])) {
                 </div>
             </div>
             <!------------------- END OF MESSAGES---------------->
-            <br><br>
-            <br><br><br><br><br>
-            <br><br><br><br><br>
-            <br><br><br>
 
             <!------------------- FRIEND REQUEST---------------->
             <div class="friend-requests">
@@ -307,8 +304,7 @@ if (isset($_POST["cari"])) {
         </div>
     </div>
 
-
-    <script src="index.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
