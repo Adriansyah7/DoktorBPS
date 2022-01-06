@@ -195,53 +195,60 @@ if (isset($_POST["cari"])) {
             <div class="right">
                 <div class="messages">
                     <div class="heading">
-                        <h4>Kategori</h4>
+                        <h4>Media Sosial</h4>
                         <i class="uil uil-edit"></i>
                     </div>
-                    <!------------------- SEARCH BAR ---------------->
-                    <div class="search-bar">
-                        <i class="uil uil-search-alt"></i>
-                        <input type="search" placeholder="Cari Kategori" id="message-search">
-                    </div>
+
                     <!------------------- MESSAGES CATEGORY ---------------->
                     <div class="category">
-                        <h6 class="message-requests">Daftar Kategori</h6>
+                        <h6 class="message-requests">Daftar Media Sosial</h6>
                     </div>
                     <!------------------- MESSAGE---------------->
                     <div class="message">
                         <div class="profile-photo">
-                            <img src="./img/logo2.png" alt="">
+                            <img src="./img/facebook.jpg" alt="">
                         </div>
                         <div class="message-body">
-                            <h5>IPDS</h5>
+                            <a href="https://www.facebook.com/bpsstatistics">
+                                <h5> Facebook</h5>
+                            </a>
                         </div>
                     </div>
                     <div class="message">
                         <div class="profile-photo">
-                            <img src="./img/logo2.png" alt="">
+                            <img src="./img/instagram.jpg" alt="">
                             <div class="active"></div>
                         </div>
                         <div class="message-body">
-                            <h5>BPS</h5>
+                            <a href="https://www.instagram.com/bps_statistics/?hl=id">
+                                <h5>Instagram</h5>
+                            </a>
                         </div>
                     </div>
                     <div class="message">
                         <div class="profile-photo">
-                            <img src="./img/logo2.png" alt="">
+                            <img src="./img/yt.jpg" alt="">
                         </div>
                         <div class="message-body">
-                            <h5>Staff</h5>
+                            <a href="https://www.youtube.com/c/BPSStatistics" target="blank">
+                                <h5>YouTube</h5>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <!------------------- END OF MESSAGES---------------->
-
-                <!------------------- FRIEND REQUEST---------------->
-                <div class="friend-requests">
-                    <h4>@Badan Pusat Statistik 2021</h4>
-                </div>
             </div>
-            <!--=============================== END OF RIGHT ==============================-->
+            <!------------------- END OF MESSAGES---------------->
+            <br><br>
+            <br><br><br><br><br>
+            <br><br><br><br><br>
+            <br><br><br>
+
+            <!------------------- FRIEND REQUEST---------------->
+            <div class="friend-requests">
+                <h4>@Badan Pusat Statistik 2021</h4>
+            </div>
+        </div>
+        <!--=============================== END OF RIGHT ==============================-->
         </div>
     </main>
 
@@ -301,7 +308,7 @@ if (isset($_POST["cari"])) {
     </div>
 
 
-    <script src="./index.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
