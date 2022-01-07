@@ -1,9 +1,17 @@
 <?php
 session_start();
+require 'function.php';
 
 // cek cookie
-if (isset($_COOKIE['login'])) {
-    if ($_COOKIE['login'] == 'true') {
+if( isset($_COOKIE['id']) && isset($_COOKIE['key']) ) {
+    $id = $_COOKIE['id'];
+    $key = $_COOKIE['key'];
+    // ambil username berdasarkan id
+     $result = mysqli_query ($conn, "SELECT username FROM user WHERE
+         id = $id");
+    $row = mysqli_fetch_assoc ($result);
+   // cek cookie dan username
+    if( $key === hash('sha256', $row['username']) ) {
         $_SESSION['login'] = true;
     }
 }
@@ -13,7 +21,7 @@ if (isset($_SESSION["login"])) {
     exit;
 }
 
-require 'function.php';
+
 
 if (isset($_POST["login"])) {
 
@@ -35,7 +43,8 @@ if (isset($_POST["login"])) {
             // cek Ingat saya
             if (isset($_POST['ingat'])) {
                 // buat cookie
-                setcookie('login', 'true', time() + 43200);
+                setcookie('id', $row['id'], time() + 86400);
+                setcookie('key', hash('sha256', $row['username']), time()+ 86400);
             }
 
             header("Location: index.php");
@@ -91,21 +100,12 @@ if (isset($_POST["register"])) {
                         <input type="password" name="password" id="password" placeholder="Password" />
                     </div>
                     <input type="submit" name="login" value="Login" class="btn solid" />
-                    <p class="social-text">Atau masuk dengan Akun sosial media Anda</p>
-                    <div class="social-media">
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-google"></i>
-                        </a>
-                    </div>
                 </form>
                 <!-----------------------------------END OF SIGN IN--------------------------------------->
 
                 <!---------------------------------------SIGN UP---------------------------------------------->
                 <form action="" method="post" class="sign-up-form">
-                    <h2 class="title">Sign up</h2>
+                    <h2 class="title">YAY</h2>
                     <div class="input-field">
                         <i class="fas fa-user"></i>
                         <input type="text" name="username" id="username" placeholder="Username" />
@@ -116,17 +116,12 @@ if (isset($_POST["register"])) {
                     </div>
                     <div class="input-field">
                         <i class="fas fa-check-circle"></i>
-                        <input type="password" name="password2" id="password2" placeholder="Konfirmasi Password" />
+                        <input type="password" name="password" id="password" placeholder="Konfirmasi Password" />
                     </div>
-                    <input type="submit" name="register" class="btn" value="Sign up" />
+                    <input type="submit" name="register" class="btn" value="YAY" />
                     <p class="social-text">Atau daftar dengan Akun sosial media Anda</p>
                     <div class="social-media">
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-icon">
-                            <i class="fab fa-google"></i>
-                        </a>
+                    
                     </div>
                 </form>
             </div>
@@ -140,12 +135,7 @@ if (isset($_POST["register"])) {
                     <p>
                         abadikan semua kegiatan dan aktifitas pekerjaan Anda disini.
                     </p>
-                    <p>
-                        Belum punya Akun?
-                    </p>
-                    <button class="btn transparent" id="sign-up-btn">
-                        Sign up
-                    </button>
+                    
                 </div>
                 <img src="img/foto5.svg" class="image" alt="" />
             </div>
@@ -162,7 +152,7 @@ if (isset($_POST["register"])) {
         </div>
     </div>
 
-    <script src="login.js"></script>
+    <script src=".js"></script>
 </body>
 
 </html>
